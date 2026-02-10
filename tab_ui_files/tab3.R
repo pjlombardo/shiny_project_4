@@ -1,2 +1,2 @@
 
-plotOutput("myplot3")
+DT::dataTableOutput("full_joined_table")

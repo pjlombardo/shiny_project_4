@@ -4,8 +4,12 @@
 ui <- fluidPage(
   # Fill in your details here
   h1("Here is our title"),
+  br(),
+  p("descriptions here"),
+  br(),
   inputPanel(
-    p("drop-down for data set")
+    fileInput("genes_data","Please upload your tab-separated genes data file:"),
+    fileInput("samples_data","Please upload your tab-separated samples data file:"),
   ),
   
   

@@ -3,6 +3,7 @@
 
 library(shiny)
 library(tidyverse)
+library(DT)
 
 source('functions.R')
 

@@ -1,4 +1,4 @@
 
-output$myplot3 <-renderPlot(
-  hist(iris$Petal.Width)
+output$full_joined_table <- DT::renderDataTable(
+  DT::datatable(iris)
 )
