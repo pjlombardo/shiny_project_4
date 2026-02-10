@@ -10,5 +10,19 @@ source('functions.R')
 server <- function(input, output){
   # you will put your interactions here
   
+  # for all three tabs
+  # cotent here
+  
+  # tab 1
+  source('tab_server_files/server1.R', local = TRUE)$value
+  
+  
+  # tab 2
+  source('tab_server_files/server2.R', local = TRUE)$value
+  
+  
+  # tab3
+  source('tab_server_files/server3.R', local = TRUE)$value
+  
   
 }

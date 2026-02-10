@@ -1,0 +1,2 @@
+
+plotOutput("myplot2")
