@@ -21,7 +21,7 @@ fluidRow(
   ),
   ###############################################
   
-  tableOutput("top_genes_table")
+  gt::gt_output("top_genes_table")
   
 )
 

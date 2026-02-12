@@ -21,5 +21,6 @@ fluidRow(
       )
   ),
   ###############################################
-  plotOutput("heatmap")
+  plotOutput("heatmap",
+             height = "500px")
 )

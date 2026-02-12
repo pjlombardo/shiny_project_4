@@ -4,6 +4,7 @@
 library(shiny)
 library(tidyverse)
 library(DT)
+library(gt)
 
 source('functions.R')
 
