@@ -96,4 +96,22 @@ make_plot <- function(plot_df){
 }
 
 
+make_data_table <- function(samples_df, genes_df){
+  
+  sample_cols <- get_choice_vals(samples_df) %>% unlist()
+  
+    data_table<- inner_join(x = genes_df,
+               y = samples_df,
+               by = "ENTREZID") %>%
+      mutate(SYMBOL = SYMBOL.x) %>%
+      select(SYMBOL,P.Value, logFC, sample_cols) %>%
+      mutate(P.Value = sapply(P.Value,
+                              function(x){formatC(x, digits = 3, format = 'e')})) %>%
+      mutate(across(where(is.numeric),
+                    function(x){round(x,3)}))
+    
+    return(data_table)
+
+}
+
 

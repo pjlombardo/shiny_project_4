@@ -39,7 +39,7 @@ The bullets below take the general form:
 > tab | Shiny Component  |  **variable_name**  | (inputs required)  | optional: function used
 
 * TAB1 | plotOutput | **heatmap** | none... | none...
-* TAB2 | tableOutput | **top_genes_table** | none... | none...
+* TAB2 | gt::gt_output | **top_genes_table** | none... | none...
 * TAB3 | DT::dataTableOutput | **full_joined_table** | none... | DT::datatable(), probably more ...
 
 ### Reactive components and Server
@@ -50,8 +50,8 @@ The bullets below take the general form:
 > APP | reactiveValues() | **df$sample_df** | input$sample_data | dataframe
 > APP | reactiveValues() | **analyis$ready** | input$genes_data, input$samples_data | bool
 
-* To render DT::datatables, need DT::renderDataTable().
-
+* To render DT::datatable, need DT::renderDataTable().
+* To render gt table, need gt::render_gt()
 
 ### Functions and Set up
 
@@ -61,5 +61,5 @@ The bullets below take the general form:
 > TAB1, TAB2 | **get_top_genes_joined_df** | (top_genes, df$samples_df) | get the top # of genes from genes_df
 > TAB1 | **make_plot_df** | (top_genes_joined_df,top_genes,samples_df, chosen_samples) | creates our plotting dataframe
 > TAB1 | **make_plot** | (plot_df) | makes the actual heatmap.
+> TAB3 | **make_data_table** | (df$samples_df, df$genes_df) | formats a table to pass into DT::datable() on the server side.
 
-> tab | **function_name**  |  (inputs)  | purpose
