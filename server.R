@@ -8,7 +8,7 @@ library(DT)
 source('functions.R')
 
 # this function defines your server logic
-server <- function(input, output){
+server <- function(input, output, session){
   # you will put your interactions here
   
   # for all three tabs
@@ -24,6 +24,7 @@ server <- function(input, output){
   
   observeEvent(input$genes_data, {
     df$genes_df <- read.csv((input$genes_data)$datapath, sep = '\t')
+    
     if (!(is.null(df$genes_df) | is.null(df$samples_df))){
       analysis$ready <- TRUE
     }
@@ -32,9 +33,24 @@ server <- function(input, output){
   
   observeEvent(input$samples_data, {
     df$samples_df <- read.csv((input$samples_data)$datapath, sep = '\t')
+    
     if (!(is.null(df$genes_df) | is.null(df$samples_df))){
       analysis$ready <- TRUE
     }
+    
+    updateSelectInput(
+      session,
+      "sample_t1",
+      choices = get_choice_vals(df$samples_df),
+      select = get_choice_vals(df$samples_df)
+    )
+    
+    updateSelectInput(
+      session,
+      "sample_t2",
+      choices = get_choice_vals(df$samples_df),
+      select = get_choice_vals(df$samples_df)
+    )
     
   })
   

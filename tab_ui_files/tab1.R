@@ -11,9 +11,9 @@ fluidRow(
                        max = 30)
       ),
       div(style = "width: 70%; padding: 20px; box-sizing: border-box;",
-          selectInput("samples_t1",
+          selectInput("sample_t1",
                       "Select which samples to include in the plot.",
-                      choices = list("choices" = "choices"),
+                      choices = list("Please upload a samples data frame" = "choices"),
                       # choices = m_choices,
                       multiple = TRUE
                       # selected = m_choices

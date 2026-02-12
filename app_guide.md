@@ -56,3 +56,8 @@ The bullets below take the general form:
 ### Functions and Set up
 
 > tab | **function_name**  |  (inputs)  | purpose
+> TAB1, TAB2 | **get_choice_vals**  |  (df$samples_df)  | population our choices for the multiple selection.
+> TAB1, TAB2 | **get_top_genes_df** | (df$genes_df, num_genes) | get the top # of genes from genes_df
+> TAB1, TAB2 | **get_top_genes_joined_df** | (top_genes, df$samples_df) | get the top # of genes from genes_df
+
+> tab | **function_name**  |  (inputs)  | purpose
