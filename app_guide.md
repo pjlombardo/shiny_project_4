@@ -44,7 +44,11 @@ The bullets below take the general form:
 
 ### Reactive components and Server
 
-> tab | component type | **variable_name(s)** | Events that trigger 
+> tab | component type | **variable_name(s)** | Events that trigger | data type
+
+> APP | reactiveValues() | **df$genes_df** | input$genes_data | dataframe
+> APP | reactiveValues() | **df$sample_df** | input$sample_data | dataframe
+> APP | reactiveValues() | **analyis$ready** | input$genes_data, input$samples_data | bool
 
 * To render DT::datatables, need DT::renderDataTable().
 

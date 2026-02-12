@@ -1,5 +1,9 @@
 
 output$heatmap <-renderPlot(
-  hist(iris$Sepal.Length)
+  if (analysis$ready){
+    hist(iris$Sepal.Length)
+  } else {
+    NULL
+  }
 )
 
